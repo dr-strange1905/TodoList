@@ -1,7 +1,10 @@
 
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
-const supabaseKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
+const isTestEnvironment = process.env.NEXT_PUBLIC_IS_TEST_ENV === 'true';
+
+const supabaseUrl = isTestEnvironment ? process.env.REACT_APP_SUPABASE_URL_TEST : process.env.REACT_APP_SUPABASE_URL;
+
+const supabaseKey = isTestEnvironment ? process.env.REACT_APP_SUPABASE_ANON_KEY_TEST : process.env.REACT_APP_SUPABASE_ANON_KEY;
 
 export const supabase = createClient(supabaseUrl, supabaseKey);

@@ -7,6 +7,6 @@ const isTestEnvironment = process.env.NEXT_PUBLIC_IS_TEST_ENV === 'true';
 
  const supabaseKey = isTestEnvironment ? process.env.REACT_APP_SUPABASE_ANON_KEY_TEST : process.env.REACT_APP_SUPABASE_ANON_KEY;
 
-
+console.log(process.env);
 
 export const supabase = createClient(supabaseUrl, supabaseKey);

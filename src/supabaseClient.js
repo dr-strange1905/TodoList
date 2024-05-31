@@ -1,7 +1,7 @@
 
 import { createClient } from '@supabase/supabase-js';
 
-const isTestEnvironment = process.env.NEXT_PUBLIC_IS_TEST_ENV === 'true';
+const isTestEnvironment = process.env.NODE_ENV_IS_TEST_ENV === 'true';
 
  const supabaseUrl = isTestEnvironment ? process.env.REACT_APP_SUPABASE_URL_TEST : process.env.REACT_APP_SUPABASE_URL;
 
